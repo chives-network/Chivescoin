@@ -109,7 +109,10 @@ class FullNodeAPI:
         """
         # this semaphore limits the number of tasks that can call new_peak() at
         # the same time, since it can be expensive
-        waiter_count = len(self.full_node.new_peak_sem._waiters)
+        if self.full_node and self.full_node.new_peak_sem and self.full_node.new_peak_sem._waiters is not None:
+            waiter_count = len(self.full_node.new_peak_sem._waiters)
+        else:
+            waiter_count = 0
 
         if waiter_count > 0:
             self.full_node.log.debug(f"new_peak Waiters: {waiter_count}")
