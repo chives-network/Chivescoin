@@ -1,12 +1,10 @@
 name: 📦🚀 Trigger Dev Docker Build
 
 on:
-  workflow_dispatch:
-  # push:
-  #   branches:
-  #     - 'long_lived/**'
-  #     - 'release/**'
-  # pull_request:
+  push:
+    branches:
+      - main
+
 
 concurrency:
   # SHA is added to the end if on `main` to let all main workflows run
