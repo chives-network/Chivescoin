@@ -144,7 +144,7 @@ jobs:
 
     - name: Run install script
       env:
-        INSTALL_PYTHON_VERSION: ${{ matrix.python-version }}
+        INSTALL_PYTHON_VERSION: 3.9
       run: |
         .\Install.ps1 -d
 
