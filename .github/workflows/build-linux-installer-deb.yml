@@ -3,7 +3,7 @@ name: 📦🚀 Build Installer - Linux DEB AMD64
 on:
   push:
     branches:
-      - main1
+      - main
 
 concurrency:
   # SHA is added to the end if on `main` to let all main workflows run
